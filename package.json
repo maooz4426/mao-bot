@@ -1,29 +1,33 @@
 {
-  "name": "mao-bot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-      "start": "node --env-file=.env src/index.ts",
-      "build" : "tsc"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "11.18.0",
-      "onFail": "download"
-    }
-  },
-  "type": "module",
-  "devDependencies": {
-    "typescript": "^7.0.2",
-    "@types/node": "^26.2.0"
-  },
-  "dependencies": {
-    "discord.js": "^14.27.0",
-    "dotenv": "^17.4.2"
-  }
+	"name": "mao-bot",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node --env-file=.env src/index.ts",
+		"build": "tsc",
+		"lint": "biome lint .",
+		"format": "biome format --write .",
+		"check": "biome check --write ."
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devEngines": {
+		"packageManager": {
+			"name": "pnpm",
+			"version": "11.18.0",
+			"onFail": "download"
+		}
+	},
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "2.5.7",
+		"@types/node": "^26.2.0",
+		"typescript": "^7.0.2"
+	},
+	"dependencies": {
+		"discord.js": "^14.27.0",
+		"dotenv": "^17.4.2"
+	}
 }
