@@ -1,6 +1,8 @@
 import { Client, GatewayIntentBits, Message, Partials } from "discord.js";
 import dotenv from "dotenv";
 
+const   ciTestVar    = 'CI failure test'
+
 // dotenv.config()
 
 const client = new Client({
