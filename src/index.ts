@@ -6,6 +6,7 @@ import {
 	Partials,
 } from "discord.js";
 import { commandList } from "./commands";
+
 const client = new Client({
 	intents: [GatewayIntentBits.Guilds],
 	partials: [Partials.Message, Partials.Channel],
