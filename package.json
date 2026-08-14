@@ -10,8 +10,8 @@
 		"lint": "biome lint .",
 		"format": "biome format --write .",
 		"check": "biome check --write .",
-        "patch-dev":"tsx --env-file=dev.env src/patches/register-commands.ts",
-        "patch-prod":"tsx --env-file=dev.env src/patches/register-commands.ts"
+		"patch-dev": "tsx --env-file=dev.env src/patches/register-commands.ts",
+		"patch-prod": "tsx --env-file=dev.env src/patches/register-commands.ts"
 	},
 	"keywords": [],
 	"author": "",
