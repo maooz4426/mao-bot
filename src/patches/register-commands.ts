@@ -1,9 +1,9 @@
 import assert from "node:assert";
 import { REST, Routes } from "discord.js";
-import { commandList } from "./index.ts";
+import { commandList } from "../commands";
 
 // 登録用関数
-async function register() {
+async function registerCommands() {
 	assert.ok(process.env.TOKEN, "TOKEN is required");
 	assert.ok(process.env.CLIENT_ID, "CLIENT_ID is required");
 
@@ -12,6 +12,8 @@ async function register() {
 	await rest.put(Routes.applicationCommands(process.env.CLIENT_ID), {
 		body: commandList.map((command) => command.data.toJSON()),
 	});
+
+	console.log("finished");
 }
 
-register().catch((err) => console.log(err));
+registerCommands().catch((error) => console.error(error));

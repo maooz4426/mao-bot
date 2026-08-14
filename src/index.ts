@@ -6,6 +6,7 @@ import {
 	Partials,
 } from "discord.js";
 import { commandList } from "./commands";
+import { register } from "./commands/register-commands";
 
 const client = new Client({
 	intents: [GatewayIntentBits.Guilds],
@@ -14,7 +15,7 @@ const client = new Client({
 client.commands = new Collection();
 
 client.once("ready", () => {
-	console.log("Ready");
+	register().then(() => console.log("ready"));
 	if (client.user) {
 		console.log(client.user.tag);
 	}
