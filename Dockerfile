@@ -6,7 +6,7 @@ RUN corepack enable
 FROM base AS build
 ENV APP_DIR=/usr/src/app
 WORKDIR $APP_DIR
-COPY package.json pnpm-lock.yaml tsconfig.json $APP_DIR/
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.json $APP_DIR/
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 COPY src $APP_DIR/src
 # COPY .env $APP_DIR/
