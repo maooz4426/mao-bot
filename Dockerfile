@@ -9,7 +9,7 @@ WORKDIR $APP_DIR
 COPY package.json pnpm-lock.yaml tsconfig.json $APP_DIR/
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 COPY src $APP_DIR/src
-COPY .env $APP_DIR/
+# COPY .env $APP_DIR/
 RUN pnpm build
 
 FROM base AS runner
