@@ -5,7 +5,7 @@ import {
 	GatewayIntentBits,
 	Partials,
 } from "discord.js";
-import { commandList } from "./commands";
+import { commandList } from "./commands/index.ts";
 
 const client = new Client({
 	intents: [GatewayIntentBits.Guilds],
