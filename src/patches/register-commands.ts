@@ -1,6 +1,6 @@
 import assert from "node:assert";
 import { REST, Routes } from "discord.js";
-import { commandList } from "../commands";
+import { commandList } from "../commands/index.ts";
 
 // 登録用関数
 async function registerCommands() {
