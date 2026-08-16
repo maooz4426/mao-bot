@@ -3,9 +3,6 @@ name: Deploy
 on:
   push:
     tags: v*.*.*
-  pull_request:
-    types: [opened,reopened,synchronize]
-    branches: main
 
 jobs:
   deploy:
