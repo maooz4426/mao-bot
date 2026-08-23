@@ -1,6 +1,7 @@
 import assert from "node:assert";
 import { REST, Routes } from "discord.js";
-import { commandList } from "../commands/index.ts";
+import { createCommands } from "../commands/index.ts";
+import { mao } from "../persona/mao.ts";
 
 // 登録用関数
 async function registerCommands() {
@@ -10,7 +11,7 @@ async function registerCommands() {
 	const rest = new REST().setToken(process.env.TOKEN);
 
 	await rest.put(Routes.applicationCommands(process.env.CLIENT_ID), {
-		body: commandList.map((command) => command.data.toJSON()),
+		body: createCommands(mao).map((command) => command.data.toJSON()),
 	});
 
 	console.log("finished");

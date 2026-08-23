@@ -5,7 +5,8 @@ import {
 	GatewayIntentBits,
 	Partials,
 } from "discord.js";
-import { commandList } from "./commands/index.ts";
+import { createCommands } from "./commands/index.ts";
+import { mao } from "./persona/mao.ts";
 
 const client = new Client({
 	intents: [GatewayIntentBits.Guilds],
@@ -19,7 +20,7 @@ client.once("ready", () => {
 	}
 });
 
-for (const command of commandList) {
+for (const command of createCommands(mao)) {
 	client.commands.set(command.data.name, command);
 }
 client.on(Events.InteractionCreate, async (interaction) => {
@@ -35,4 +36,5 @@ client.on(Events.InteractionCreate, async (interaction) => {
 		console.log(error);
 	}
 });
+
 client.login(process.env.TOKEN);
